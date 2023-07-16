@@ -1,0 +1,126 @@
+body {
+	text-align: center;
+    background-color:aqua ;
+}
+
+h1 {
+	margin-top: 50px;
+}
+
+#target {
+    width: 200px;
+    height: 200px;
+    margin: 50px auto;
+    border-radius: 50%;
+    background-color: white;
+    border: 5px solid black;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.75);
+    animation: zoom-in-out 1s infinite;
+  }
+  
+  /* .square {
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+    border-radius: 10px;
+    background-color: red;
+    border: 3px solid black;
+    box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.75);
+    cursor: pointer;
+  } */
+
+  @keyframes zoom-in-out {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+  .square {
+    width: 100px;
+    height: 100px;
+    background-color:#f8d7da;
+    margin: 10px;
+    display: inline-block;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+    border-radius: 10px;
+    border: 3px solid black;
+    box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.75);
+    cursor: pointer;
+    
+  }
+  
+  .square.flipped {
+    transform: rotateY(180deg);
+  }
+  
+  .square .front, .square .back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+  }
+  
+  .square .front {
+    z-index: 2;
+  }
+  
+  .square .back {
+    transform: rotateY(180deg);
+  }
+  
+  .square.clicked .front {
+    transform: rotateY(180deg);
+    z-index: 1;
+  }
+  
+  .square.clicked .back {
+    z-index: 2;
+  }
+  
+.clicked {
+    animation: color-change 0.5s ease-in-out; /* Add an animation to the .clicked class */
+}
+
+@keyframes color-change {
+    0% {
+        background-color: white;
+    }
+    50% {
+        background-color: #f8d7da;
+    }
+    100% {
+        background-color: white;
+    }
+}
+
+  
+
+#scoreboard {
+	margin-top: 50px;
+}
+
+#scoreboard p {
+	display: inline-block;
+	margin: 0 20px;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+#score {
+	color: green;
+}
+
+#lives {
+	color: red;
+}
+
